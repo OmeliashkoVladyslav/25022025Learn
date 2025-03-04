@@ -3,7 +3,7 @@ name: first CI/CD
 on:
   pull_request:
     branches:
-      -main
+      - main
 
 
 jobs:
@@ -17,4 +17,15 @@ jobs:
           echo "Getting comp info ..."
           whoami
           sleep 5
+          pwd
+  welcome_script_in_paralel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome part
+        run: echo "Hello guys!!!"
+      - name: Get info
+        run: |
+          echo "Getting comp info ..."
+          whoami
+          sleep 17
           pwd
