@@ -1,0 +1,36 @@
+name: Homework with creating Books and Library
+
+on:
+  pull_request:
+    branches:
+      - main
+
+
+jobs:
+  welcome_script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome part
+        run: echo "Test"
+      - name: Get info
+        run: |
+          echo "Getting comp info ..."
+          sleep 5
+
+  welcome_script_in_parallel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Welcome part
+        run: echo "Test2!!!"
+      - name: Get info
+        run: |
+          echo "Getting comp info ..."
+          sleep 10
+
+  checks_needed:
+     needs: [welcome_script, welcome_script_in_parellel]
+     runs-on: ubuntu-latest
+     steps:
+       - name: Welcome part
+         run: echo "Test 3"
+
